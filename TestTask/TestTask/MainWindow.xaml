@@ -5,8 +5,92 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TestTask"
         mc:Ignorable="d"
+        WindowStyle="None"
+        Background="Transparent"
+        AllowsTransparency="True"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
+    <Border BorderThickness="2"  CornerRadius="10" BorderBrush="DarkGray" Background="White">
+        <Border.Effect>
+            <DropShadowEffect/>
+        </Border.Effect>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition MinHeight="50" Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <GridSplitter Grid.Row="1" Height="2" Background="DarkGray" HorizontalAlignment="Stretch" VerticalAlignment="Center"></GridSplitter>
+            <TextBlock Grid.Row="0" Margin="10 10 40 5" FontSize="20" FontWeight="Bold" Foreground="Black">Master Form</TextBlock>
+            <Button Grid.Row="0" Width="30" Height="30" Margin="0,10,10,10" HorizontalAlignment="Right">
+                <Button.Template>
+                    <ControlTemplate  TargetType="Button">
+                        <Grid>
+                            <Ellipse Fill="LightGray"></Ellipse>
+                            <Label Content="{TemplateBinding Content}" HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"></Label>
+                        </Grid>
+                    </ControlTemplate>
+                </Button.Template>
+                <Button.Content>
+                    <Grid Background="Transparent" RenderTransformOrigin="0.5,0.5">
+                        <Grid.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="45"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Grid.RenderTransform>
+                        <Rectangle Stroke="White" Width="18" StrokeThickness="4" VerticalAlignment="Center" />
+                        <Rectangle Stroke="White" Height="18" StrokeThickness="4" HorizontalAlignment="Center" />
+                    </Grid>
+                </Button.Content>
+            </Button>
+            <Grid Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10 15">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="0" Padding="5 0" Background="DarkGray" FontSize="15" FontWeight="Bold">Graph Name</TextBlock>
+                <TextBlock Grid.Row="0" Grid.Column="1" Padding="5 0" Background="DarkGray" FontSize="15" FontWeight="Bold">Actions</TextBlock>
+                <TextBlock Grid.Row="1" Grid.Column="0" Margin="5 0" FontSize="15" FontWeight="DemiBold">Sensor #1</TextBlock>
+                <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" Height="Auto" Width="Auto">
+                    <Border Height="Auto" CornerRadius="5" Background="Blue" BorderThickness="2">
+                        <Button Background="Transparent" Padding="10 5" VerticalAlignment="Stretch" BorderBrush="Transparent">
+                            <TextBlock Foreground="White" FontSize="15">View</TextBlock>
+                        </Button>
+                    </Border>
+                </StackPanel>
+                    <TextBlock Grid.Row="2" Grid.Column="0" Padding="5 0" Background="LightGray" FontSize="15" FontWeight="DemiBold">Sensor#2</TextBlock>
+                <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" Height="Auto" Width="Auto" Background="LightGray">
+                    <Border Height="Auto" CornerRadius="5" Background="Blue" BorderThickness="2">
+                        <Button Background="Transparent" Padding="10 5" VerticalAlignment="Stretch" BorderBrush="Transparent">
+                            <TextBlock Foreground="White" FontSize="15">View</TextBlock>
+                        </Button>
+                    </Border>
+                </StackPanel>
+                <TextBlock Grid.Row="3" Grid.Column="0" Margin="5 0" FontSize="15" FontWeight="DemiBold">Sensor #3</TextBlock>
+                <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal" Height="Auto" Width="Auto">
+                    <Border Height="Auto" CornerRadius="5" Background="Blue" BorderThickness="2">
+                        <Button Background="Transparent" Padding="10 5" VerticalAlignment="Stretch" BorderBrush="Transparent">
+                            <TextBlock Foreground="White" FontSize="15">View</TextBlock>
+                        </Button>
+                    </Border>
+                </StackPanel>
+
+            </Grid>
+            <Border Height="35" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0 10 20 10" Grid.Row="3" CornerRadius="5" Background="Blue" BorderThickness="2">
+                <Button Background="Transparent" Padding="15 0 15 0" VerticalAlignment="Stretch" BorderBrush="Transparent">
+                    <TextBlock Foreground="White" FontSize="15">Exti App</TextBlock>
+                </Button>
+            </Border>
+        </Grid>
+    </Border>
 </Window>
